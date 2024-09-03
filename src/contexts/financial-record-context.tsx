@@ -1,6 +1,7 @@
 import { useUser } from "@clerk/clerk-react";
 //import { clerkJsScriptUrl } from "@clerk/clerk-react/internal";
 import { createContext, useContext, useEffect, useState } from "react"
+/* tslint:disable */
 
 export interface FinancialRecord {
     _id?: string;
@@ -73,7 +74,7 @@ export const FinancialRecordProvider = ({
 
     };
 
-    const updateRecord = async (id: string, newRecord: FinancialRecord) => {
+    const updateRecord = async (id: string, newRecord: Partial<FinancialRecord>) => {
 
         const response = await fetch(`http://localhost:3001/financial-records/${id}`, {
             method: "PUT", body: JSON.stringify(newRecord), headers: {
